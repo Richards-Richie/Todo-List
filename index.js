@@ -5,7 +5,7 @@ const app= express();
 const date=require(__dirname+"/date");
 const mongoose = require('mongoose');
 const _ = require("lodash");
-
+const port=process.env.PORT ||55555;
 
 app.use(bp.urlencoded({ extended:true }));
 app.use(express.static("public"));
@@ -162,6 +162,6 @@ app.post("/about",function(req,res){
 });
 
 
-app.listen(55555,function() {
+app.listen(port,function() {
     console.log("listening on port 55555");
 });
